@@ -1,0 +1,5 @@
+#goodsList {
+    margin: 0 100px;
+    overflow-y: auto;
+    height: 600px;
+}
