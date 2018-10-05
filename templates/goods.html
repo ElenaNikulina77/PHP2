@@ -1,0 +1,30 @@
+{% include 'header.html' %}
+<div class="row">
+
+    <div class="col-sm-12 col-xs-12 border p-3 m-5">
+        <div class="d-flex justify-content-around flex-wrap" id="goodsList">
+            {% for good in content_data %}
+            <div class="card p-1 m-1" style="width: 54rem;">
+                <img class="card-img-top text-center" src="{{good.img}}" alt="image not found">
+                <div class="card-body">
+                    <h5 class="card-title m-0 text-center">
+                        <p class="card-text">
+                            {{good.name}}, ИД: {{good.id}}
+                        </p>
+                    </h5>
+                    <p class="card-text m-0">Страна: {{good.country}}
+                    </p>
+                    <p class="card-text"> Цена: {{good.price}}
+                    </p>
+                    <form class="goodUnit text-center" action="" method="get">
+                        <input type="hidden" name="id" value="{{good.id}}">
+                        <input type="hidden" name="path" value="goodCard">
+                        <button class="btn btn-primary" type="submit">Просмотр</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
